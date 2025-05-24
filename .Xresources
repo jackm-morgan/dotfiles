@@ -1,0 +1,78 @@
+! --- Base colours -------------------------------------------------------------
+#define  bg          #000000   /* background (pure black) */
+#define  fg          #d0d0d0   /* primary foreground (soft light‑grey) */
+#define  cursor      #d0d0d0   /* cursor colour            */
+#define  revcursor   #000000   /* reverse‑video cursor     */
+
+! --- ANSI 16‑colour palette ----------------------------------------------------
+#define  black       #000000   /* colour0  */
+#define  red         #ff5f5f   /* colour1  – muted soft red        */
+#define  green       #5fffaf   /* colour2  – sea‑foam green        */
+#define  yellow      #ffd787   /* colour3  – warm muted amber      */
+#define  blue        #5f87ff   /* colour4  – professional blue     */
+#define  magenta     #af5fff   /* colour5  – soft violet           */
+#define  cyan        #5fffff   /* colour6  – cyan/teal accent      */
+#define  white       #d0d0d0   /* colour7  – light grey            */
+
+#define  brblack     #505050   /* colour8  – mid grey              */
+#define  brred       #ff8787   /* colour9  */
+#define  brgreen     #87ffd7   /* colour10 */
+#define  bryellow    #ffefaf   /* colour11 */
+#define  brblue      #87afff   /* colour12 */
+#define  brmagenta   #cfaaff   /* colour13 */
+#define  brcyan      #87ffff   /* colour14 */
+#define  brwhite     #ffffff   /* colour15 – pure white            */
+
+! --- Apply palette ------------------------------------------------------------
+*.background:      bg
+*.foreground:      fg
+*.cursorColor:     cursor
+*.reverseVideo:    false
+
+*.color0:          black
+*.color1:          red
+*.color2:          green
+*.color3:          yellow
+*.color4:          blue
+*.color5:          magenta
+*.color6:          cyan
+*.color7:          white
+*.color8:          brblack
+*.color9:          brred
+*.color10:         brgreen
+*.color11:         bryellow
+*.color12:         brblue
+*.color13:         brmagenta
+*.color14:         brcyan
+*.color15:         brwhite
+
+! --- Xft / font rendering (optional tweaks) ------------------------------------
+!Xft.antialias:     true
+!Xft.dpi:           96
+!Xft.hinting:       true
+!Xft.hintstyle:     hintslight
+!Xft.rgba:          rgb
+
+! --- st specific options -------------------------------------------------------
+!st.borderpx:       8
+
+! --- dmenu (reads Xresources via xrdb) ----------------------------------------
+dmenu.font:        DejaVuSansM Nerd Font:pixelsize=12:antialias=true:autohint=true
+dmenu.normfgcolor:  fg
+dmenu.normbgcolor:  bg
+
+dmenu.color0:      black
+dmenu.color1:      red
+dmenu.color2:      green
+
+dmenu.selbgcolor: fg
+dmenu.selfgcolor: bg
+
+! --- qutebrowser --------------------------------------------------------------
+! Qutebrowser can be set to respect Xresources by launching with:
+!   qutebrowser --basedir ~/.config/qutebrowser --qt-flag ignore-xresources false
+! Or by importing with a userscript.
+
+! -----------------------------------------------------------------------------
+!  Load with:  xrdb -merge ~/.Xresources   (or symlink this file)
+! -----------------------------------------------------------------------------
